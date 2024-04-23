@@ -59,7 +59,7 @@ project_root_dir
 |__ run.py
 ```
 
-# Steps of creating the todolist App
+# Steps of creating the Todolist App
 
 1. Simple Hello world app
 2. Setup database connection [Sign Up For mongoDB cloud](https://account.mongodb.com/account/login)
