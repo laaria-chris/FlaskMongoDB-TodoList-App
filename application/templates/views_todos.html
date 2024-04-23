@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for todo in todos %}
+        <div class="card p-1 m-3">
+            <div class="card-body">
+                {% if todo.completed == "True" %}
+                <h5 class="card-title"><del>{{ todo.name }}</del></h5>
+                {% else %}
+                <h5 class="card-title">{{ todo.name }}</h5>
+                {% endif %}
+                <p class="card-text text-muted">{{ todo.date_created }}</p>
+                <p class="card-text">{{ todo.description }}</p>
+                
+                <a href="{{ url_for('update_todo', id = todo._id) }}" class="btn btn-outline-info btn-sm">Update</a>
+                <a href="{{ url_for('delete_todo', id = todo._id) }}" class="btn btn-outline-danger btn-sm" onclick="console.log('Delete button clicked:', event.target.href)">Delete</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
